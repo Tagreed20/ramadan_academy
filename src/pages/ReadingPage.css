@@ -1,0 +1,351 @@
+.reading-page {
+  width: 100%;
+}
+
+.reading-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.reading-header h1 {
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .reading-header h1 {
+  color: var(--gold-dark);
+}
+
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.progress-info span {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.progress-bar-container {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-light), var(--secondary-light));
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+body.dark-mode .progress-bar {
+  background: linear-gradient(90deg, var(--gold-dark), var(--secondary-dark));
+}
+
+.reading-content {
+  margin-bottom: 2rem;
+}
+
+.story-section {
+  margin-bottom: 2rem;
+}
+
+.story-section h2 {
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .story-section h2 {
+  color: var(--gold-dark);
+}
+
+.story-text {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  background-color: rgba(135, 206, 235, 0.05);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border-right: 4px solid var(--primary-light);
+  text-align: justify;
+}
+
+body.dark-mode .story-text {
+  background-color: rgba(255, 183, 0, 0.05);
+  border-right-color: var(--gold-dark);
+}
+
+.vocabulary-section h3 {
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .vocabulary-section h3 {
+  color: var(--gold-dark);
+}
+
+.vocabulary-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.vocabulary-list li {
+  padding: 1rem;
+  background-color: rgba(152, 255, 152, 0.1);
+  border-radius: 8px;
+  border-right: 4px solid var(--secondary-light);
+}
+
+body.dark-mode .vocabulary-list li {
+  background-color: rgba(255, 183, 0, 0.05);
+  border-right-color: var(--secondary-dark);
+}
+
+.vocabulary-list strong {
+  color: var(--primary-light);
+}
+
+body.dark-mode .vocabulary-list strong {
+  color: var(--gold-dark);
+}
+
+.question-section {
+  margin-bottom: 2rem;
+}
+
+.question-section h2 {
+  color: var(--primary-light);
+  margin-bottom: 1.5rem;
+  font-size: 1.3rem;
+}
+
+body.dark-mode .question-section h2 {
+  color: var(--gold-dark);
+}
+
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.option-button {
+  padding: 1rem;
+  border: 2px solid var(--primary-light);
+  border-radius: 8px;
+  background-color: white;
+  color: var(--text-light);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.option-button:hover:not(:disabled) {
+  background-color: var(--primary-light);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(135, 206, 235, 0.3);
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.option-button.selected {
+  background-color: var(--primary-light);
+  color: white;
+  border-color: var(--primary-light);
+}
+
+body.dark-mode .option-button {
+  background-color: rgba(255, 183, 0, 0.05);
+  border-color: var(--gold-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .option-button:hover:not(:disabled) {
+  background-color: var(--gold-dark);
+  color: var(--bg-dark);
+  box-shadow: 0 4px 12px rgba(255, 183, 0, 0.3);
+}
+
+body.dark-mode .option-button.selected {
+  background-color: var(--gold-dark);
+  color: var(--bg-dark);
+  border-color: var(--gold-dark);
+}
+
+.feedback {
+  padding: 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: center;
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.feedback.correct {
+  background-color: rgba(152, 255, 152, 0.2);
+  color: #2d5a3d;
+  border-left: 4px solid var(--secondary-light);
+}
+
+body.dark-mode .feedback.correct {
+  background-color: rgba(152, 255, 152, 0.1);
+  color: var(--secondary-light);
+}
+
+.feedback.incorrect {
+  background-color: rgba(255, 107, 107, 0.2);
+  color: #8B0000;
+  border-left: 4px solid #FF6B6B;
+}
+
+body.dark-mode .feedback.incorrect {
+  background-color: rgba(255, 107, 107, 0.1);
+  color: #FF6B6B;
+}
+
+.completion-card {
+  text-align: center;
+  padding: 2rem;
+}
+
+.completion-icon {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+.completion-card h2 {
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .completion-card h2 {
+  color: var(--gold-dark);
+}
+
+.completion-card p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.completion-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  background-color: rgba(135, 206, 235, 0.1);
+  border-radius: 8px;
+  border: 2px solid var(--primary-light);
+}
+
+body.dark-mode .stat {
+  background-color: rgba(255, 183, 0, 0.05);
+  border-color: var(--gold-dark);
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+}
+
+body.dark-mode .stat-label {
+  color: #aaa;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+body.dark-mode .stat-value {
+  color: var(--gold-dark);
+}
+
+.completion-card .btn {
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .reading-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .story-text {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+
+  .vocabulary-list {
+    grid-template-columns: 1fr;
+  }
+
+  .options-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .completion-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .reading-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .progress-info span {
+    font-size: 0.85rem;
+  }
+
+  .story-text {
+    font-size: 0.95rem;
+    padding: 0.75rem;
+  }
+
+  .question-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .option-button {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .completion-icon {
+    font-size: 3rem;
+  }
+
+  .completion-card h2 {
+    font-size: 1.3rem;
+  }
+
+  .completion-card p {
+    font-size: 1rem;
+  }
+}

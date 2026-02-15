@@ -1,0 +1,17 @@
+.submit-section {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.completion-message {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin: 1rem 0;
+}

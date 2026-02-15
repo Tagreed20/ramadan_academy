@@ -1,0 +1,348 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .app {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+.main-content {
+  flex: 1;
+  width: 100%;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .main-content {
+    padding: 1rem 0.5rem;
+  }
+}
+
+/* Dark Mode Stars Background */
+.stars-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+body.dark-mode .stars-background {
+  display: block;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: white;
+  border-radius: 50%;
+  animation: twinkle 1.5s infinite;
+}
+
+/* Lantern Glow */
+.lantern-glow {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+body.light-mode .lantern-glow {
+  display: none;
+}
+
+/* Moon */
+.moon {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: rgba(255, 215, 0, 0.8);
+  border-radius: 50%;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+  pointer-events: none;
+}
+
+body.light-mode .moon {
+  display: none;
+}
+
+/* Notification */
+.notification {
+  position: fixed;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary-light);
+  color: var(--text-light);
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: slideInLeft 0.5s ease-out;
+  z-index: 1000;
+}
+
+body.dark-mode .notification {
+  background-color: var(--accent-dark);
+  color: var(--text-dark);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-light), var(--secondary-light), var(--accent-light));
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+body.dark-mode .progress-bar {
+  background: linear-gradient(90deg, var(--gold-dark), var(--secondary-dark), var(--accent-dark));
+}
+
+/* Points Display */
+.points-display {
+  display: inline-block;
+  background-color: var(--gold-light);
+  color: var(--text-light);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+body.dark-mode .points-display {
+  background-color: var(--gold-dark);
+  color: var(--text-dark);
+}
+
+/* Card Styling */
+.card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px var(--card-shadow-light);
+  transition: all 0.3s ease;
+  margin-bottom: 1.5rem;
+}
+
+.card:hover {
+  box-shadow: 0 4px 16px var(--card-shadow-light);
+  transform: translateY(-2px);
+}
+
+body.dark-mode .card {
+  background-color: rgba(255, 183, 0, 0.05);
+  box-shadow: 0 2px 8px var(--card-shadow-dark);
+}
+
+body.dark-mode .card:hover {
+  box-shadow: 0 4px 16px var(--card-shadow-dark);
+}
+
+/* Button Styling */
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--primary-light);
+  color: var(--text-light);
+}
+
+.btn-primary:hover {
+  background-color: #5DADE2;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-light);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  background-color: #7FE87F;
+  transform: translateY(-2px);
+}
+
+.btn-accent {
+  background-color: var(--accent-light);
+  color: var(--text-light);
+}
+
+.btn-accent:hover {
+  background-color: #D4A5E8;
+  transform: translateY(-2px);
+}
+
+.btn-success {
+  background-color: var(--secondary-light);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: #7FE87F;
+}
+
+.btn-danger {
+  background-color: #FF6B6B;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #EE5A52;
+}
+
+body.dark-mode .btn-primary {
+  background-color: var(--primary-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #2d3d5e;
+}
+
+body.dark-mode .btn-secondary {
+  background-color: var(--secondary-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .btn-secondary:hover {
+  background-color: #3d7a4d;
+}
+
+body.dark-mode .btn-accent {
+  background-color: var(--accent-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .btn-accent:hover {
+  background-color: #5a4a7e;
+}
+
+/* Input Styling */
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid var(--primary-light);
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  background-color: white;
+  color: var(--text-light);
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--secondary-light);
+  box-shadow: 0 0 8px rgba(152, 255, 152, 0.3);
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"],
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: rgba(255, 183, 0, 0.05);
+  border-color: var(--gold-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode input[type="text"]:focus,
+body.dark-mode input[type="number"]:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-color: var(--secondary-dark);
+  box-shadow: 0 0 8px rgba(255, 183, 0, 0.2);
+}
+
+/* Badge */
+.badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  background-color: var(--gold-light);
+  color: var(--text-light);
+}
+
+body.dark-mode .badge {
+  background-color: var(--gold-dark);
+  color: var(--text-dark);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .card {
+    padding: 1rem;
+  }
+
+  .btn {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+  }
+
+  .points-display {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+}

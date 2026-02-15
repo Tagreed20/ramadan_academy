@@ -1,0 +1,94 @@
+.story-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #666;
+  background-color: rgba(230, 213, 255, 0.1);
+  padding: 1rem;
+  border-radius: 8px;
+  border-right: 4px solid var(--accent-light);
+  margin-bottom: 1rem;
+}
+
+body.dark-mode .story-text {
+  color: #aaa;
+  background-color: rgba(255, 183, 0, 0.05);
+  border-right-color: var(--gold-dark);
+}
+
+.drag-drop-area {
+  border: 3px dashed var(--primary-light);
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  background-color: rgba(135, 206, 235, 0.05);
+  margin: 1.5rem 0;
+  transition: all 0.3s ease;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.dark-mode .drag-drop-area {
+  border-color: var(--gold-dark);
+  background-color: rgba(255, 183, 0, 0.05);
+}
+
+.drag-drop-area:hover {
+  background-color: rgba(135, 206, 235, 0.15);
+  border-color: var(--secondary-light);
+}
+
+body.dark-mode .drag-drop-area:hover {
+  background-color: rgba(255, 183, 0, 0.1);
+  border-color: var(--secondary-dark);
+}
+
+.drag-drop-area p {
+  color: #666;
+  font-weight: 600;
+  margin: 0;
+}
+
+body.dark-mode .drag-drop-area p {
+  color: #aaa;
+}
+
+.drag-options {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.drag-item {
+  padding: 1rem;
+  background-color: var(--secondary-light);
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: move;
+  transition: all 0.3s ease;
+  user-select: none;
+}
+
+.drag-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(152, 255, 152, 0.3);
+}
+
+.drag-item:active {
+  opacity: 0.7;
+  cursor: grabbing;
+}
+
+body.dark-mode .drag-item {
+  background-color: var(--secondary-dark);
+  color: var(--text-dark);
+}
+
+body.dark-mode .drag-item:hover {
+  box-shadow: 0 4px 12px rgba(255, 183, 0, 0.3);
+}
